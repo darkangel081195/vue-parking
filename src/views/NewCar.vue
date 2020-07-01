@@ -57,6 +57,7 @@
 import { mapState, mapGetters, mapActions} from "vuex";
 
 export default {
+    name : 'NewCar',
     data(){
         return{
             newCar: {
@@ -69,11 +70,27 @@ export default {
     methods : {
         ...mapActions(['addCar']),
 
+        isAlreadyPresent(){
+            for(let value of this.filledSlots){
+                if(value.registration === this.newCar.number){
+                    return true;
+                }
+            }
+
+            return false;
+        },
+
         onSubmit(){
 
             if(this.filledSlots.length >= this.totalSlots){
                 this.$message({
                     message : 'Parking is Full!!!',
+                    type : 'error'
+                })
+            }
+            else if(this.isAlreadyPresent()){
+                this.$message({
+                    message : 'Registration number already present',
                     type : 'error'
                 })
             }
@@ -96,7 +113,8 @@ export default {
 
                 }
             }
-        }
+        },
+        
     },
     computed : {
       ...mapState(['totalSlots']),
