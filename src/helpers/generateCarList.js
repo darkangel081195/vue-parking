@@ -24,6 +24,5 @@ export const generateCarList = (slots,cars)=>{
             carsList.push(null)
         }
     }
-
     return carsList;
 }

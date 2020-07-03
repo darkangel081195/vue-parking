@@ -111,7 +111,7 @@
                         && (!this.color || data.color === this.color))
             }
 
-        }
+        },
 
     }
 </script>

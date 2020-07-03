@@ -76,12 +76,10 @@ export default {
                     return true;
                 }
             }
-
             return false;
         },
 
         onSubmit(){
-
             if(this.filledSlots.length >= this.totalSlots){
                 this.$message({
                     message : 'Parking is Full!!!',
@@ -108,8 +106,6 @@ export default {
                         message : 'Car is added is to next available parking slot',
                         type : 'success'
                     })
-                    this.newCar.number = "";
-                    this.newCar.color = "";
 
                 }
             }

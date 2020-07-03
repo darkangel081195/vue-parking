@@ -10,9 +10,6 @@
   export default {
     name: 'app',
     components: {Navigation},
-    
-
-
   }
 </script>
 
